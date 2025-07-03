@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="CETPRO Nuestra Señora de las Mercedes - Educación Técnica de calidad en Lima, Perú." />
+<title>CETPRO Nuestra Señora de las Mercedes</title>
+<link rel="stylesheet" href="estilosss2.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<!-- Encabezado -->
+<header>
+    <div class="container">
+    <h1>CETPRO Nuestra Señora de las Mercedes</h1>
+    <nav aria-label="Menú principal">
+        <ul class="menu-principal">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="inscripcion.html">Inscripción</a></li>
+        <li><a href="horarios.html">Horarios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li>
+            <a href="cursos.html">Cursos</a>
+            <ul class="submenu">
+            <li><a href="cursos.html#programacion">Programación</a></li>
+            <li><a href="cursos.html#carpinteria">Carpintería</a></li>
+            <li><a href="cursos.html#estilismo">Estilismo</a></li>
+            <li><a href="cursos.html#costura">Costura</a></li>
+            <li><a href="cursos.html#Panadería y Pastelería">Panadería y Pastelería</a></li>
+            <li><a href="cursos.html#Servicios Básicos de Gastronomía">Servicios Básicos de Gastronomía</a></li>
+            <li><a href="cursos.html#Patronaje">Patronaje</a></li>
+            </ul>
+        </li>
+        </ul>
+    </nav>
+    </div>
+</header>
+<!-- Bienvenida -->
+<main>
+    <section class="bienvenida">
+    <h2>Bienvenido al CETPRO Nuestra Señora de las Mercedes</h2>
+    <p>Ofrecemos formación técnica productiva de calidad para transformar vidas y construir un mejor futuro.</p>
+    <img src="imagenes/fotoo.jpg" alt="Estudiantes en aula" class="img-banner" />
+    </section>
+    <!-- Presentación institucional -->
+    <section class="institucional">
+    <div class="container">
+        <h2>¿Quiénes Somos?</h2>
+        <p>Somos una institución comprometida con la educación técnico-productiva en Perú. Nuestro enfoque es brindar herramientas reales para el trabajo, el emprendimiento y el desarrollo personal.</p>
+        <ul>
+        <li>✔ Docentes altamente capacitados</li>
+        <li>✔ Certificación oficial del Ministerio de Educación</li>
+        <li>✔ Laboratorios equipados y espacios modernos</li>
+        </ul>
+    </div>
+    </section>
+    <!-- Testimonios -->
+    <section class="testimonios">
+    <div class="container">
+        <h2>Testimonios de Nuestros Egresados</h2>
+        <blockquote>
+        “Gracias al CETPRO ahora tengo mi propio negocio de costura. ¡Lo recomiendo totalmente!”<br>
+        <cite>– Rosa Fernández, egresada de Costura</cite>
+        </blockquote>
+        <blockquote>
+        “Aprendí programación desde cero y ahora trabajo en una empresa tecnológica.”<br>
+        <cite>– Diego Ríos, egresado de Programación</cite>
+        </blockquote>
+    </div>
+    </section>
+    <!-- Galería -->
+    <section class="galeria">
+    <div class="container">
+        <h2>Nuestras Especialidades</h2>
+        <div class="galeria-imagenes">
+        <img src="imagenes/descargar.webp" alt="Curso de Programación" />
+        <img src="imagenes/descargar (4).webp" alt="Curso de Carpintería" />
+        <img src="imagenes/descargar (1).webp" alt="Curso de Estilismo" />
+        <img src="imagenes/descargar (2).webp" alt="Curso de Costura" />
+        <img src="imagenes/descargar (5).webp" alt="Curso de Patronaje" />
+        <img src="imagenes/descargar (6).webp" alt="Curso de Pastelería" />
+        </div>
+    </div>
+    </section>
+    <section class="video">
+<h2>Video Institucional</h2>
+<div class="video-responsive">
+    <iframe width="560" height="315"
+    src="imagenes/WhatsApp Video 2025-07-01 at 10.21.09 AM.mp4"
+    title="Video institucional"
+    frameborder="0" allowfullscreen></iframe>
+</div>
+</head>
+<body>
+<h1>Egresados del CETPRO</h1>
+<div class="carousel-container">
+    <div class="carousel-track" id="track">
+    <img src="imagenes/egresados1.jfif" alt="Imagen 1">
+    <img src="imagenes/egresados2.jfif" alt="Imagen 2">
+    <img src="imagenes/egresados3.jfif" alt="Imagen 3">
+    <img src="imagenes/egresados4.jfif" alt="Imagen 4">
+    <img src="imagenes/egresados5.jfif" alt="Imagen 5">
+    <img src="imagenes/egresados6.jfif" alt="Imagen 6">
+    </div>
+</div>
+
+<script>
+    const track = document.getElementById('track');
+    const slides = track.children;
+    const slideWidth = slides[0].clientWidth;
+    let index = 0;
+
+    setInterval(() => {
+    index++;
+    if (index >= slides.length) {
+        index = 0;
+    }
+      track.style.transform = `translateX(-${slideWidth * index}px)`;
+    }, 3000); // Cambia cada 3 segundos
+</script>
+</section>
+    <!-- Llamado a la acción -->
+    <section class="cta">
+    <div class="container">
+        <h2>¡Inscríbete hoy y transforma tu futuro!</h2>
+        <a href="inscripcion.html" class="btn-inscripcion">Ir al formulario de inscripción</a>
+    </div>
+    </section>
+</main>
+
+<!-- Pie de página -->
+<footer>
+    <section class="redes-sociales">
+    <p>Síguenos en nuestras redes sociales:</p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/18WtT4vdSB/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/CetproNsm" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/cetrpro_nsm_?igsh=MWhyOGJoOW1qaG85dA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@CetproNSM" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@cetpro_nsm_" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    </section>
+    <p>&copy; 2025 CETPRO Nuestra Señora de las Mercedes. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
