@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Noticias | CETPRO Nuestra Señora de las Mercedes</title>
+<meta name="description" content="Últimas noticias, logros estudiantiles, eventos deportivos y novedades del CETPRO Nuestra Señora de las Mercedes." />
+<meta name="author" content="CETPRO Nuestra Señora de las Mercedes" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === Barra superior estilo idéntico === */
+
+header {
+    background-color: #003366; /* tono azul exacto */
+    text-align: center;
+}
+
+header .titulo {
+    color: white;
+    font-weight: 700;
+    font-size: 1.7rem;
+    padding: 18px 30px;
+    margin: 0;
+}
+
+header nav .container {
+    display: flex;
+    justify-content: center;
+    padding: 16px 30px 30px; /* ← Aquí se añadió espacio inferior */
+}
+
+header nav ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul.menu li a {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+header nav ul.menu li a:hover,
+header nav ul.menu li a:focus-visible {
+    background-color: #00509e; /* azul más claro al hover */
+    outline: none;
+}
+
+/* ==== Sección Noticias ==== */
+
+main.noticias-section {
+    margin: 60px auto 90px;
+}
+
+main.noticias-section h2.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #004080;
+    margin-bottom: 50px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap: 40px;
+}
+
+article.noticia {
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 12px 24px rgba(0, 64, 128, 0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+article.noticia:focus,
+article.noticia:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0, 64, 128, 0.25);
+    outline: none;
+}
+
+.noticia img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 4px solid #004080;
+    transition: transform 0.4s ease;
+}
+
+article.noticia:hover img,
+article.noticia:focus img {
+    transform: scale(1.05);
+}
+
+.noticia-content {
+    padding: 26px 28px 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.noticia-category {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: #004080cc;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    user-select: none;
+}
+
+.noticia-date {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 8px;
+    user-select: none;
+}
+
+.noticia-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 6px 0 15px;
+    color: #003366;
+}
+
+.noticia-excerpt {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #444;
+    flex-grow: 1;
+    margin-bottom: 24px;
+}
+
+.noticia-readmore {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #004080;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    width: fit-content;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.noticia-readmore:hover,
+.noticia-readmore:focus {
+    color: #00264d;
+    border-color: #004080;
+    outline: none;
+}
+
+/* ==== Footer ==== */
+
+footer {
+    background-color: #004080;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer .redes-sociales p {
+    margin: 0 0 12px;
+    font-weight: 600;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 14px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover,
+footer .social-icons a:focus {
+    color: #cbd9ff;
+    outline: none;
+}
+
+footer p.copyright {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ==== Adaptabilidad móvil ==== */
+
+@media (max-width: 600px) {
+    header .titulo {
+        font-size: 1.4rem;
+        padding: 14px 20px;
+    }
+
+    header nav .container {
+        padding: 12px 20px 24px; /* también ajustado el padding-bottom aquí */
+    }
+
+    nav ul.menu {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    main.noticias-section {
+        margin: 40px 15px 70px;
+    }
+
+    .noticias-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .noticia img {
+        height: 180px;
+    }
+
+    .noticia-title {
+        font-size: 1.3rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1 class="titulo">CETPRO Nuestra Señora de las Mercedes</h1>
+<nav aria-label="Menú principal">
+    <div class="container">
+    <ul class="menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" tabindex="0">Inicio</a></li>
+        <li role="none"><a href="cursos.html" role="menuitem" tabindex="-1">Programas de Estudio</a></li>
+        <li role="none"><a href="inscripcion.html" role="menuitem" tabindex="-1">Inscripción</a></li>
+        <li role="none"><a href="horarios.html" role="menuitem" tabindex="-1">Horarios</a></li>
+        <li role="none"><a href="nosotros.html" role="menuitem" tabindex="-1">Nosotros</a></li>
+        <li role="none"><a href="contacto.html" role="menuitem" tabindex="-1">Contacto</a></li>
+        <li role="none"><a href="noticias.html" role="menuitem" tabindex="-1">Noticias</a></li>
+    </ul>
+    </div>
+</nav>
+</header>
+
+<main class="noticias-section container" aria-label="Últimas noticias de CETPRO">
+<h2 class="section-title">Últimas Noticias</h2>
+
+<div class="noticias-grid" role="list">
+
+    <article class="noticia" tabindex="0" role="listitem" aria-labelledby="noticia1-title" aria-describedby="noticia1-desc">
+    <figure style="position:relative; margin:0;">
+        <img
+        src="imagenes/1693606823.jpg"
+        alt="Estudiantes participando en torneo deportivo CETPRO"
+        loading="lazy"
+        width="600"
+        height="400"
+        />
+        <figcaption class="noticia-category" aria-label="Categoría Deportes">Deportes</figcaption>
+    </figure>
+    <div class="noticia-content">
+        <time datetime="2025-04-15" class="noticia-date">15 de abril, 2025</time>
+        <h3 id="noticia1-title" class="noticia-title">Torneo deportivo CETPRO 2025</h3>
+        <p id="noticia1-desc" class="noticia-excerpt">
+        Con gran entusiasmo, los estudiantes participaron en el torneo anual de fútbol y vóley, promoviendo el compañerismo y la vida saludable.
+        </p>
+        <a href="noticia-detalle.html" class="noticia-readmore" aria-label="Leer más sobre Torneo deportivo CETPRO 2025">Leer más &raquo;</a>
+    </div>
+    </article>
+
+    <article class="noticia" tabindex="0" role="listitem" aria-labelledby="noticia2-title" aria-describedby="noticia2-desc">
+    <figure style="position:relative; margin:0;">
+        <img
+        src="imagenes/1586468167.png"
+        alt="Nuevos talleres y cursos en CETPRO"
+        loading="lazy"
+        width="600"
+        height="400"
+        />
+        <figcaption class="noticia-category" aria-label="Categoría Educación">Educación</figcaption>
+    </figure>
+    <div class="noticia-content">
+        <time datetime="2025-05-10" class="noticia-date">10 de mayo, 2025</time>
+        <h3 id="noticia2-title" class="noticia-title">Apertura de nuevos talleres prácticos</h3>
+        <p id="noticia2-desc" class="noticia-excerpt">
+        El CETPRO anuncia la apertura de talleres orientados a negocios digitales, desarrollo web y marketing en redes sociales para el próximo ciclo.
+        </p>
+        <a href="noticia-detalle.html" class="noticia-readmore" aria-label="Leer más sobre apertura de nuevos talleres">Leer más &raquo;</a>
+    </div>
+    </article>
+
+</div>
+</main>
+
+<footer>
+<section class="redes-sociales" aria-label="Redes sociales CETPRO">
+    <p>Síguenos en nuestras redes sociales:</p>
+    <div class="social-icons" style="margin-top:10px;">
+    <a href="https://www.facebook.com/share/18WtT4vdSB/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/CetproNsm" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/cetrpro_nsm_?igsh=MWhyOGJoOW1qaG85dA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@CetproNSM" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.tiktok.com/@cetpro_nsm_" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+</section>
+<p class="copyright">&copy; 2025 CETPRO Nuestra Señora de las Mercedes. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
