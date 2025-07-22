@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto | CETPRO Nuestra Señora de las Mercedes</title>
+  <meta name="description" content="Datos de contacto del CETPRO Nuestra Señora de las Mercedes en Bellavista Callao." />
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="contacto.css" />
+  <link rel="stylesheet" href="chatbot.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>CETPRO Nuestra Señora de las Mercedes</h1>
+    <nav aria-label="Menú de navegación principal">
+      <ul class="menu-principal">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="cursos.html">Programas de Estudio</a></li>
+        <li><a href="inscripcion.html">Inscripción</a></li>
+        <li><a href="horarios.html">Horarios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="contacto" tabindex="0">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes dudas o deseas más información? Estamos para ayudarte. Puedes comunicarte con nosotros a través de los siguientes medios:</p>
+
+    <ul class="info-contacto">
+      <li><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Calle Luis Guillermo More Cdra. 3, Urb. Imperio, Bellavista Callao</li>
+      <li><i class="fas fa-phone"></i> <strong>Teléfono:</strong> 01 464 1905</li>
+      <li><i class="fas fa-envelope"></i> <strong>Correo electrónico:</strong> <a href="mailto:cetpronsm123@gmail.com">cetpronsm123@gmail.com</a></li>
+    </ul>
+
+    <p>Síguenos en nuestras redes sociales para conocer novedades, fechas de inscripción y eventos.</p>
+  </section>
+</main>
+
+<!-- Botón del chatbot -->
+<button id="chatbot-toggle" aria-label="Abrir chat de ayuda">
+  <i class="fas fa-comments"></i>
+</button>
+
+<!-- Contenedor del chatbot -->
+<div id="chatbot-container" class="hidden" role="dialog" aria-modal="true" aria-labelledby="chatbot-header-title">
+  <header id="chatbot-header">
+    <h3 id="chatbot-header-title">Asistente CETPRO</h3>
+    <button id="chatbot-close" aria-label="Cerrar chat">&times;</button>
+  </header>
+
+  <div id="chatbot-messages" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
+  <div id="chatbot-quick-replies" aria-label="Sugerencias rápidas"></div>
+
+  <form id="chatbot-form" aria-label="Enviar mensaje al chatbot">
+    <input type="text" id="chatbot-input" placeholder="Escribe aquí..." autocomplete="off" required aria-label="Escribe tu mensaje" />
+    <button type="submit" aria-label="Enviar mensaje"><i class="fas fa-paper-plane"></i></button>
+  </form>
+</div>
+
+<!-- Mapa -->
+<section class="mapa">
+  <h3>Ubícanos en el Mapa</h3>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.7828517327257!2d-77.10501562628413!3d-12.058456488179258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c958822f71fb%3A0xd44697e8d7da740a!2sCETPRO-%20N.Sra.de%20las%20Mercedes!5e0!3m2!1ses-419!2spe!4v1750977665407!5m2!1ses-419!2spe"
+    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<footer>
+  <section class="redes-sociales">
+    <p>Síguenos en nuestras redes sociales:</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/18WtT4vdSB/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/CetproNsm" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/cetrpro_nsm_?igsh=MWhyOGJoOW1qaG85dA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@CetproNSM" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@cetpro_nsm_" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </section>
+  <p>&copy; 2025 CETPRO Nuestra Señora de las Mercedes. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Chatbot Script mejorado -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('chatbot-toggle');
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const closeBtn = document.getElementById('chatbot-close');
+    const messages = document.getElementById('chatbot-messages');
+    const form = document.getElementById('chatbot-form');
+    const input = document.getElementById('chatbot-input');
+    const quickRepliesContainer = document.getElementById('chatbot-quick-replies');
+
+    const respuestas = {
+      'horario': 'Nuestro horario es de <strong>Lunes a Viernes de 8am a 5pm</strong>.',
+      'cursos': 'Ofrecemos cursos como <a href="cursos.html">computación, electricidad, mecánica, peluquería</a> y más.',
+      'inscripción': 'Puedes inscribirte <a href="inscripcion.html">en línea aquí</a> o en nuestra sede presencialmente.',
+      'contacto': 'Teléfono: <strong>01 464 1905</strong><br>Correo: <a href="mailto:contacto@cetpromercedes.edu.pe">contacto@cetpromercedes.edu.pe</a>',
+      'dirección': 'Calle Luis Guillermo More Cdra. 3, Urb. Imperio, Bellavista Callao.',
+      'redes sociales': 'Encuéntranos en Facebook, Instagram, YouTube y TikTok.',
+      'gracias': '¡Gracias por escribirnos! ¿Te puedo ayudar en algo más?',
+      'default': 'No entendí tu mensaje. ¿Puedes intentarlo de nuevo o elegir una opción rápida?'
+    };
+
+    const quickReplies = [
+      { text: 'Horario de atención', trigger: 'horario' },
+      { text: 'Cursos disponibles', trigger: 'cursos' },
+      { text: 'Cómo inscribirme', trigger: 'inscripción' },
+      { text: 'Datos de contacto', trigger: 'contacto' },
+      { text: '¿Dónde están ubicados?', trigger: 'dirección' }
+    ];
+
+    function toggleChat() {
+      chatbotContainer.classList.toggle('hidden');
+      if (!chatbotContainer.classList.contains('hidden')) {
+        input.focus();
+        cargarHistorial();
+      } else {
+        input.value = '';
+      }
+    }
+
+    toggleBtn.addEventListener('click', toggleChat);
+    
+    closeBtn.addEventListener('click', () => {
+      chatbotContainer.classList.add('hidden');
+      input.value = '';
+      messages.innerHTML = '';  // Limpiar historial
+      limpiarQuickReplies();
+    });
+
+    toggleBtn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleChat();
+      }
+    });
+
+    function mostrarMensaje(texto, clase) {
+      const msgElem = document.createElement('div');
+      msgElem.classList.add(clase, 'chat-message');
+
+      if (clase === 'chat-bot') {
+        msgElem.innerHTML = `
+          <div class="chatbot-message-container">
+            <div class="chatbot-avatar" aria-hidden="true">
+              <img src="imagenes/OIP (1).webp" alt="Avatar del asistente" />
+            </div>
+            <div class="chatbot-text">${texto}</div>
+          </div>
+        `;
+      } else {
+        msgElem.textContent = texto;
+      }
+
+      messages.appendChild(msgElem);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function limpiarQuickReplies() {
+      quickRepliesContainer.innerHTML = '';
+    }
+
+    function mostrarQuickReplies() {
+      limpiarQuickReplies();
+      quickReplies.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'quick-reply';
+        btn.textContent = item.text;
+        btn.type = 'button';
+        btn.addEventListener('click', () => enviarMensaje(item.trigger));
+        quickRepliesContainer.appendChild(btn);
+      });
+    }
+
+    function buscarRespuesta(texto) {
+      const t = texto.toLowerCase();
+      if (t.includes('horario') || t.includes('hora')) return respuestas['horario'];
+      if (t.includes('curso')) return respuestas['cursos'];
+      if (t.includes('inscrip') || t.includes('matricula')) return respuestas['inscripción'];
+      if (t.includes('contacto') || t.includes('teléfono') || t.includes('correo')) return respuestas['contacto'];
+      if (t.includes('dirección') || t.includes('ubicación') || t.includes('dónde')) return respuestas['dirección'];
+      if (t.includes('gracias')) return respuestas['gracias'];
+      return respuestas['default'];
+    }
+
+    function enviarMensaje(texto) {
+      if (!texto.trim()) return;
+      mostrarMensaje(texto, 'chat-user');
+      setTimeout(() => {
+        const respuesta = buscarRespuesta(texto);
+        mostrarMensaje(respuesta, 'chat-bot');
+        mostrarQuickReplies();
+      }, 500);
+      input.value = '';
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      enviarMensaje(input.value);
+    });
+
+    function cargarHistorial() {
+      if (messages.innerHTML.trim() === '') {
+        mostrarMensaje('👋 ¡Hola! Soy el asistente virtual del CETPRO Nuestra Señora de las Mercedes. ¿En qué puedo ayudarte hoy?', 'chat-bot');
+        setTimeout(() => {
+          mostrarQuickReplies();
+        }, 300);
+      }
+    }
+
+    cargarHistorial(); // Saludo inicial al cargar la página
+  });
+</script>
+
+</body>
+</html>
